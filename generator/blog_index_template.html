@@ -1,0 +1,78 @@
+{% extends "main_template.html" %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+	
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jscroll.min.js"></script>
+	
+	<script>
+    (function ($) {
+        // custom css expression for a case-insensitive contains()
+        jQuery.expr[':'].Contains = function(a,i,m){
+            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+        };
+
+        function listFilter() {
+
+            $('#search')
+            .change( function () {
+                var filter = $(this).val();
+                if(filter) {
+                    // this finds all links in a list that contain the input,
+                    // and hide the ones not containing the input while showing the ones that do
+                    $('.list-of-posts').find("div:not(:Contains(" + filter + "))").hide();
+                    $('.list-of-posts').find("div:Contains(" + filter + ")").show();
+                    } else {
+                    $('.list-of-posts').find("div").show();
+                }
+                return false;
+            })
+            .keyup( function () {
+                // fire the above change event after every letter
+                $(this).change();
+            });
+        }
+
+        //ondomready
+        $(function () {
+            listFilter($());
+        });
+    }(jQuery));
+
+	</script>
+	
+	<div class="alert alert-warning">
+		 <div class="col-lg-12">
+		 
+			<form>
+				<input type="text" class="form-control" id="search" placeholder="Search...">
+			</form>
+			
+		  </div>
+		  <br style="clear:both">
+	</div>
+	
+	<hr/>
+
+	<div class="list-of-posts">
+	
+		{% for post in posts %}
+		
+		<div class="itembox">
+		
+			<a href="{{ post[4] }}"><strong>{{ post[0] }}</strong></a>
+			<span class="pull-right">{{ post[2] }}</span>
+			<hr class="short"/>
+			<span style="">{{ post[5][0:550] }}...</span>
+			<span style="display:none">{{ post[5] }}</span>
+			<hr class="short"/>
+			<a class="btn btn-default btn-sm" href="{{ post[4] }}" target="_blank"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read more</a>
+			
+		</div>
+		
+		{% endfor %}
+			
+	</div>
+	
+{% endblock %}

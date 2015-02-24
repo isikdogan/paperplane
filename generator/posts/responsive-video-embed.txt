@@ -1,0 +1,8 @@
+An example blog post with a responsive video embed
+2015-02-22
+---
+
+Here's a cool video:
+
+[vid]http://youtu.be/R0iJ86vXwCg[/vid]
+

@@ -1,0 +1,22 @@
+{% extends "main_template.html" %}
+{% block title %}{{ post[0] }}{% endblock %}
+
+{% block content %}
+	
+	<div class="col-md-12">
+
+		<h1>{{ post[0] }}</h1>
+		<em>{{ post[2] }}</em>
+		
+		<hr/>
+		
+		{{ post[3] }}
+		
+		<br/>
+		<hr/>
+	
+	</div>
+	
+	
+	
+{% endblock %}

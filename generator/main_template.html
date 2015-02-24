@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+    <title>{% block title %}{% endblock %}</title>
+
+	<link href="{{ subdir }}css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ subdir }}css/font-awesome.min.css" rel="stylesheet">
+	<link href="{{ subdir }}css/paperplanes.css" rel="stylesheet">
+	
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ subdir }}index.html"><span class="fa fa-home"></span>&nbsp;&nbsp; Home</a></li>
+        <li><a href="{{ subdir }}blog/index.html"><span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Blog</a></li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://www.isikdogan.com" target="_blank"><span class="fa fa-paper-plane fa-lg"></span></a></li>
+      </ul>
+  </div>
+  </div>
+  
+    <div class="container">
+		<div class="row" id="main">
+			{% block content %}{% endblock %}
+				
+			<hr/>
+			<div class="footer">
+				Powered by <a href="http://www.isikdogan.com" target="_blank">PaperPlane</a>
+			</div>
+		</div>
+	
+    </div><!-- /.container -->
+	
+  </body>
+</html>
