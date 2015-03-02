@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <title>Markdown example
 </title>
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/paperplane.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
-	<link href="../css/paperplanes.css" rel="stylesheet">
-	
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -25,27 +26,34 @@
 
   <body>
   
-  <div class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-      <ul class="nav navbar-nav">
-        <li><a href="../index.html"><span class="fa fa-home"></span>&nbsp;&nbsp; Home</a></li>
-        <li><a href="../blog/index.html"><span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Blog</a></li>
-      </ul>
-	  <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://www.isikdogan.com" target="_blank"><span class="fa fa-paper-plane fa-lg"></span></a></li>
-      </ul>
-  </div>
-  </div>
+    <div class="navbar navbar-inverse navbar-static-top">
+	  <div class="container">
+		  <ul class="nav navbar-nav">
+			<li><a href="../index.html"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
+			<li><a href="../blog/index.html"><span class="fa fa-pencil fa-fw"></span>&nbsp;&nbsp; Blog</a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank"><span class="fa fa-paper-plane fa-lg fa-fw"></span></a></li>
+		  </ul>
+	  </div>
+	</div>
   
-    <div class="container">
+    <div id="" class="container">
 		<div class="row" id="main">
 			
-	
-	<div class="col-md-12">
-
-		<h1>Markdown example
-</h1>
-		<em>February 23, 2015</em>
+			
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1>Markdown example
+</h1></div>
+		<div class="panel-body blog-content">
+		
+		<ol class="breadcrumb">
+		  <li><a href="../index.html">Home</a></li>
+		  <li><a href="../blog/index.html">Blog</a></li>
+		  <li class="active">Markdown example
+</li>	
+		  <span class="date pull-right">February 23, 2015</span>
+		</ol>		
 		
 		<hr/>
 		
@@ -73,22 +81,23 @@ line break</p>
 <li>pears</li>
 </ol>
 		
-		<br/>
+		
+		  <hr/>
+		  Tags: Markdown
+		
 		<hr/>
-	
+		</div>
 	</div>
-	
-	
 	
 
 				
-			<hr/>
 			<div class="footer">
-				Powered by <a href="http://www.isikdogan.com" target="_blank">PaperPlane</a>
+				Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
 			</div>
 		</div>
 	
     </div><!-- /.container -->
 	
+
   </body>
 </html>

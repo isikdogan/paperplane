@@ -2,7 +2,7 @@
 """
 Created on Sat Feb 21 03:13:22 2015
 
-@author: Leo
+@author: Leo Furkan Isikdogan
 """
 
 import os, re, glob, codecs, markdown, unicodedata
@@ -42,6 +42,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         f = codecs.open(file, "r", "utf-8")
         title = f.readline()
         date = f.readline()
+        tags = f.readline().rstrip(os.linesep)
         f.readline() #skip a line
         content = f.read()
         content = markdown.markdown(content)
@@ -62,7 +63,20 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         else:
             filename = blog_dir + file[0:-4] + ".html"
         
-        posts.append((title, date_object, formatted_date, content, filename, striphtml(content).strip()))
+        #create a summary
+        summary = content  
+        #remove the first blockquote in summary
+        summary = summary.replace('\n', ' ')
+        summary = re.sub(r'<blockquote>(.+?)<\/blockquote>', '', summary)
+        summary = striphtml(summary)[0:550]
+            
+        posts.append({"title": title,
+                      "date": date_object,
+                      "formatted_date": formatted_date,
+                      "content": content,
+                      "filename": filename,
+                      "summary": summary,
+                      "tags": tags})
     
     #template directory
     THIS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -72,14 +86,14 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
     for post in posts:
         template = env.get_template(blog_template)
         html_file =  template.render(post = post, subdir=subdir)
-        f = open(post[4],'w')
+        f = open(post["filename"],'w')
         f.write(html_file.encode('utf8'))
         f.close()
     
     if(createIndexPage):    
         #Sort by date
-        posts = sorted(posts, key=lambda post: post[1], reverse=True)
-        
+        posts = sorted(posts, key=lambda post: post["date"], reverse=True)
+                
         #Parse the template
         template = env.get_template(index_template)
         html_file =  template.render(posts = posts, subdir=subdir)

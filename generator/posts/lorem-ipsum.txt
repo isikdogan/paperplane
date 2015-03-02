@@ -1,5 +1,6 @@
 Lorem Ipsum
 2015-02-21
+Tags: Lorem, Ipsum
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor nulla, porta vel commodo nec, fermentum in nulla. Etiam sagittis rhoncus risus, ut mollis dolor placerat sed. Nunc volutpat mauris id nulla semper, viverra molestie massa convallis. Sed dignissim sapien interdum varius semper. Ut eu risus hendrerit ex pulvinar vestibulum ut quis felis. In lacinia nunc eu mattis imperdiet. Integer ac fringilla nibh. In tincidunt ante sit amet accumsan cursus.
 

@@ -1,5 +1,6 @@
 Markdown example
 2015-02-23
+Tags: Markdown
 ---
 
 An example from the  A [Markdown Wikipedia page](http://en.wikipedia.org/wiki/Markdown):

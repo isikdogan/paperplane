@@ -1,22 +1,29 @@
 {% extends "main_template.html" %}
-{% block title %}{{ post[0] }}{% endblock %}
+{% block title %}{{ post["title"] }}{% endblock %}
 
 {% block content %}
-	
-	<div class="col-md-12">
-
-		<h1>{{ post[0] }}</h1>
-		<em>{{ post[2] }}</em>
+			
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1>{{ post["title"] }}</h1></div>
+		<div class="panel-body blog-content">
+		
+		<ol class="breadcrumb">
+		  <li><a href="{{ subdir }}index.html">Home</a></li>
+		  <li><a href="{{ subdir }}blog/index.html">Blog</a></li>
+		  <li class="active">{{ post["title"] }}</li>	
+		  <span class="date pull-right">{{ post["formatted_date"] }}</span>
+		</ol>		
 		
 		<hr/>
 		
-		{{ post[3] }}
+		{{ post["content"] }}
 		
-		<br/>
+		{% if post["tags"] != "" %}
+		  <hr/>
+		  {{ post["tags"] }}
+		{% endif %}
 		<hr/>
-	
+		</div>
 	</div>
-	
-	
 	
 {% endblock %}

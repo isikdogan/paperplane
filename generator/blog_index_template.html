@@ -1,10 +1,11 @@
 {% extends "main_template.html" %}
 {% block title %}Blog{% endblock %}
 
+{% block pageid %}blogindex{% endblock %}
+
 {% block content %}
 	
 	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.jscroll.min.js"></script>
 	
 	<script>
     (function ($) {
@@ -17,14 +18,18 @@
 
             $('#search')
             .change( function () {
+				$('#search-results-text').show();
+				
                 var filter = $(this).val();
                 if(filter) {
                     // this finds all links in a list that contain the input,
                     // and hide the ones not containing the input while showing the ones that do
                     $('.list-of-posts').find("div:not(:Contains(" + filter + "))").hide();
                     $('.list-of-posts').find("div:Contains(" + filter + ")").show();
+					$('#search-query').text(filter);
                     } else {
-                    $('.list-of-posts').find("div").show();
+						$('#search-results-text').hide();
+						$('.list-of-posts').find("div").show();
                 }
                 return false;
             })
@@ -32,8 +37,20 @@
                 // fire the above change event after every letter
                 $(this).change();
             });
-        }
 
+			$( ".tag" ).click(function() {
+				$('#search').val($(this).text());
+				$('#search').change();
+			});
+			
+			$( "#back" ).click(function() {
+				$('#search').val("");
+				$('#search').change();
+			});
+        }
+		
+		
+		
         //ondomready
         $(function () {
             listFilter($());
@@ -42,17 +59,16 @@
 
 	</script>
 	
-	<div class="alert alert-warning">
-		 <div class="col-lg-12">
-		 
-			<form>
-				<input type="text" class="form-control" id="search" placeholder="Search...">
-			</form>
-			
-		  </div>
-		  <br style="clear:both">
+	<form>
+		<input type="text" class="form-control" id="search" placeholder="Search...">
+	</form>
+
+	<div id="search-results-text" style="display:none">
+	<hr/>
+		<button id="back" class="btn btn-default btn-sm pull-right"><i class="fa fa-arrow-left fa-fw"></i> Go back</button> 
+		<i class="fa fa-search fa-fw"></i> Search resutls for <code id="search-query"></code>:
 	</div>
-	
+			
 	<hr/>
 
 	<div class="list-of-posts">
@@ -61,18 +77,21 @@
 		
 		<div class="itembox">
 		
-			<a href="{{ post[4] }}"><strong>{{ post[0] }}</strong></a>
-			<span class="pull-right">{{ post[2] }}</span>
+			<a href="{{ post["filename"] }}" class="index-title">{{ post["title"] }}</a>
+			<span class="date pull-right">{{ post["formatted_date"] }}</span>
+			<hr class="short clear"/>
+			<span>{{ post["summary"] }}...</span><br/>
 			<hr class="short"/>
-			<span style="">{{ post[5][0:550] }}...</span>
-			<span style="display:none">{{ post[5] }}</span>
-			<hr class="short"/>
-			<a class="btn btn-default btn-sm" href="{{ post[4] }}" target="_blank"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read more</a>
+			
+			<a class="btn btn-default btn-sm" href="{{ post["filename"] }}"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>
+			
+			<small class="pull-right">{{ post["tags"] }}</small>
+			
 			
 		</div>
 		
 		{% endfor %}
-			
+	
 	</div>
 	
 {% endblock %}

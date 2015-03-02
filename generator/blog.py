@@ -6,6 +6,7 @@ Created on Sat Feb 21 03:13:22 2015
 """
 
 from paperplane import createBlog
+import os
 
 #Posts will be read from here
 text_dir = "posts/*.txt"
