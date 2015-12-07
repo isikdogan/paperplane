@@ -9,8 +9,8 @@ from paperplane import createBlog
 import os
 
 #Posts will be read from here
-text_dir = "posts/*.txt"
-frontpage_text_dir = "index.txt"
+text_dir = "posts/*.md"
+frontpage_text_dir = "index.md"
 
 #Generated pages will be written here
 blog_dir = "../blog/"

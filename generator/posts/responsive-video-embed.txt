@@ -1,9 +1,0 @@
-An example blog post with a responsive video embed
-2015-02-22
-Tags: Video embed, YouTube
----
-
-Here's a cool video:
-
-[vid]http://youtu.be/R0iJ86vXwCg[/vid]
-

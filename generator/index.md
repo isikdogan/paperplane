@@ -1,7 +1,5 @@
-PaperPlane: A simple static blog generator
+Title: PaperPlane: A simple static blog generator
 
-
----
 ><a class="btn btn-primary" target="_blank" href="https://github.com/isikdogan/paperplane"><span class="fa fa-github fa-lg"></span>&nbsp;&nbsp;&nbsp; Source Code</a>
 
 You like this website? You can easily create your own using PaperPlane, which is a very simple, flat-file, static blog generator. Initially, I created it to have a complete control over my personal website. Then I decided to put it online after receiving some encouraging comments on my website.

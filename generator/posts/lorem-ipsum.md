@@ -1,7 +1,9 @@
-Lorem Ipsum
-2015-02-21
+Title: Lorem ipsum
+Date: 2015-02-21
 Tags: Lorem, Ipsum
----
+Description: Article summary comes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Thumbnail: https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor nulla, porta vel commodo nec, fermentum in nulla. Etiam sagittis rhoncus risus, ut mollis dolor placerat sed. Nunc volutpat mauris id nulla semper, viverra molestie massa convallis. Sed dignissim sapien interdum varius semper. Ut eu risus hendrerit ex pulvinar vestibulum ut quis felis. In lacinia nunc eu mattis imperdiet. Integer ac fringilla nibh. In tincidunt ante sit amet accumsan cursus.
 
 Sed sed mauris tristique, auctor lorem tincidunt, vehicula tortor. Aenean nec faucibus felis. Nulla feugiat, mi at faucibus dapibus, mauris urna maximus diam, vitae tincidunt justo augue ut orci. Nulla a mollis nisi. Nam at dolor mi. Vestibulum gravida, est non porta congue, turpis purus hendrerit leo, a suscipit ante nisi in metus. In felis dolor, scelerisque in mi eget, pellentesque bibendum leo. Donec sit amet dapibus libero. Aenean ac fringilla leo. Nullam eu nisl nec mauris condimentum elementum. Vestibulum mattis aliquet est non rhoncus. Etiam fermentum mauris dolor, non suscipit quam ultrices sit amet.

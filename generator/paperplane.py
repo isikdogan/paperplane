@@ -2,7 +2,7 @@
 """
 Created on Sat Feb 21 03:13:22 2015
 
-@author: Leo Furkan Isikdogan
+@author: Leo Isikdogan
 """
 
 import os, re, glob, codecs, markdown, unicodedata
@@ -35,18 +35,48 @@ def striphtml(data):
     return p.sub('', data)
     
 def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index_template = None, createSlugs = True, subdir = ""):
-    #Read posts from text files
+    
+    
+
+    #Read posts from markdown files
     files = glob.glob(text_dir)
     posts = []
     for file in files:
+
+        md = markdown.Markdown(extensions = ['markdown.extensions.extra', 'markdown.extensions.meta'])
+
         f = codecs.open(file, "r", "utf-8")
-        title = f.readline()
-        date = f.readline()
-        tags = f.readline().rstrip(os.linesep)
-        f.readline() #skip a line
-        content = f.read()
-        content = markdown.markdown(content)
+        mdfile = f.read()
+        content = md.convert(mdfile)
         
+
+        #load metadata
+        title = md.Meta['title'][0]
+
+        if 'date' in md.Meta:
+            date = md.Meta['date'][0]
+            date_object = parse(date)
+            formatted_date = date_object.strftime('%B %d, %Y').replace(" 0", " ")
+        else:
+            date_object = None
+            formatted_date = None
+
+        if 'description' in md.Meta:
+            description = md.Meta['description'][0]
+        else:
+            description = content[0:500] + '...'
+
+        if 'tags' in md.Meta:
+            tags = md.Meta['tags'][0]
+        else:
+            tags = ""
+
+        if 'thumbnail' in md.Meta:
+            thumbnail = md.Meta['thumbnail'][0]
+        else:
+            thumbnail = 'https://placeholdit.imgix.net/~text?txtsize=16&txt=No+thumbnail&w=100&h=100'
+        
+
         #embed videos
         it = re.finditer("\[vid\](.*?)\[/vid\]", content)    
         for match in it:
@@ -55,28 +85,19 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
                 embed_code = "<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/" + vidcode + "?wmode=transparent&amp;fs=1&amp;hl=en&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=0&amp;theme=light\"></iframe></div>"
                 content = content.replace(match.group(0), embed_code)
         
-        date_object = parse(date)
-        formatted_date = date_object.strftime('%B %d, %Y').replace(" 0", " ")
-        
         if(createSlugs):
             filename = blog_dir + slugify(title) + ".html"
         else:
-            filename = blog_dir + file[0:-4] + ".html"
+            filename = blog_dir + file[0:-3] + ".html"
         
-        #create a summary
-        summary = content  
-        #remove the first blockquote in summary
-        summary = summary.replace('\n', ' ')
-        summary = re.sub(r'<blockquote>(.+?)<\/blockquote>', '', summary)
-        summary = striphtml(summary)[0:550]
-            
         posts.append({"title": title,
+                      "description": description,
                       "date": date_object,
                       "formatted_date": formatted_date,
                       "content": content,
                       "filename": filename,
-                      "summary": summary,
-                      "tags": tags})
+                      "tags": tags,
+                      "thumbnail": thumbnail})
     
     #template directory
     THIS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -89,7 +110,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         f = open(post["filename"],'w')
         f.write(html_file.encode('utf8'))
         f.close()
-    
+            
     if(createIndexPage):    
         #Sort by date
         posts = sorted(posts, key=lambda post: post["date"], reverse=True)
@@ -98,7 +119,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         template = env.get_template(index_template)
         html_file =  template.render(posts = posts, subdir=subdir)
         
-        #Write the inex page
+        #Write the index page
         f = open(blog_dir + "index.html",'w')
         f.write(html_file.encode('utf8'))
         f.close()

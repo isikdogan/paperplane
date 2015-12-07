@@ -9,6 +9,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <title>Blog</title>
+    
+<meta name="description" content="Index of blog posts" />
+
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/paperplane.css" rel="stylesheet">
@@ -31,70 +34,13 @@
 			<li><a href="../index.html"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
 			<li><a href="../blog/index.html"><span class="fa fa-pencil fa-fw"></span>&nbsp;&nbsp; Blog</a></li>
 		  </ul>
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank"><span class="fa fa-paper-plane fa-lg fa-fw"></span></a></li>
-		  </ul>
 	  </div>
 	</div>
   
     <div id="blogindex" class="container">
 		<div class="row" id="main">
 			
-	
-	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
-	
-	<script>
-    (function ($) {
-        // custom css expression for a case-insensitive contains()
-        jQuery.expr[':'].Contains = function(a,i,m){
-            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-        };
-
-        function listFilter() {
-
-            $('#search')
-            .change( function () {
-				$('#search-results-text').show();
-				
-                var filter = $(this).val();
-                if(filter) {
-                    // this finds all links in a list that contain the input,
-                    // and hide the ones not containing the input while showing the ones that do
-                    $('.list-of-posts').find("div:not(:Contains(" + filter + "))").hide();
-                    $('.list-of-posts').find("div:Contains(" + filter + ")").show();
-					$('#search-query').text(filter);
-                    } else {
-						$('#search-results-text').hide();
-						$('.list-of-posts').find("div").show();
-                }
-                return false;
-            })
-            .keyup( function () {
-                // fire the above change event after every letter
-                $(this).change();
-            });
-
-			$( ".tag" ).click(function() {
-				$('#search').val($(this).text());
-				$('#search').change();
-			});
-			
-			$( "#back" ).click(function() {
-				$('#search').val("");
-				$('#search').change();
-			});
-        }
 		
-		
-		
-        //ondomready
-        $(function () {
-            listFilter($());
-        });
-    }(jQuery));
-
-	</script>
-	
 	<form>
 		<input type="text" class="form-control" id="search" placeholder="Search...">
 	</form>
@@ -113,64 +59,119 @@
 		
 		<div class="itembox">
 		
-			<a href="../blog/markdown-example.html" class="index-title">Markdown example
-</a>
+			<a href="../blog/markdown-example.html" class="index-title">Markdown example</a>
 			<span class="date pull-right">February 23, 2015</span>
 			<hr class="short clear"/>
-			<span>An example from the  A Markdown Wikipedia page: Heading Sub-heading Another deeper heading Paragraphs are separated by a blank line. Let 2 spaces at the end of a line to do a line break Text attributes italic, bold,  monospace. A link. Shopping list:  apples oranges pears  Numbered list:  apples oranges pears ...</span><br/>
-			<hr class="short"/>
 			
-			<a class="btn btn-default btn-sm" href="../blog/markdown-example.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>
+			<img class="pull-right blog-index-thumbnail" src="https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100" alt="thumbnail"/>
+			<span>An example from the Markdown Wikipedia page</span><br/>
 			
-			<small class="pull-right">Tags: Markdown</small>
+			<div class="vspace"></div>
 			
+			<a class="btn btn-default btn-sm" href="../blog/markdown-example.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>	
 			
+			<br class="clear"/>
 		</div>
 		
 		
 		
 		<div class="itembox">
 		
-			<a href="../blog/an-example-blog-post-with-a-responsive-video-embed.html" class="index-title">An example blog post with a responsive video embed
-</a>
+			<a href="../blog/an-example-blog-post-with-a-responsive-video-embed.html" class="index-title">An example blog post with a responsive video embed</a>
 			<span class="date pull-right">February 22, 2015</span>
 			<hr class="short clear"/>
-			<span>Here's a cool video: ...</span><br/>
-			<hr class="short"/>
 			
-			<a class="btn btn-default btn-sm" href="../blog/an-example-blog-post-with-a-responsive-video-embed.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>
+			<img class="pull-right blog-index-thumbnail" src="https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100" alt="thumbnail"/>
+			<span>An example blog post with a responsive video embed</span><br/>
 			
-			<small class="pull-right">Tags: Video embed, YouTube</small>
+			<div class="vspace"></div>
 			
+			<a class="btn btn-default btn-sm" href="../blog/an-example-blog-post-with-a-responsive-video-embed.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>	
 			
+			<br class="clear"/>
 		</div>
 		
 		
 		
 		<div class="itembox">
 		
-			<a href="../blog/lorem-ipsum.html" class="index-title">Lorem Ipsum
-</a>
+			<a href="../blog/lorem-ipsum.html" class="index-title">Lorem ipsum</a>
 			<span class="date pull-right">February 21, 2015</span>
 			<hr class="short clear"/>
-			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor nulla, porta vel commodo nec, fermentum in nulla. Etiam sagittis rhoncus risus, ut mollis dolor placerat sed. Nunc volutpat mauris id nulla semper, viverra molestie massa convallis. Sed dignissim sapien interdum varius semper. Ut eu risus hendrerit ex pulvinar vestibulum ut quis felis. In lacinia nunc eu mattis imperdiet. Integer ac fringilla nibh. In tincidunt ante sit amet accumsan cursus. Sed sed mauris tristique, auctor lorem tincidunt, vehicula tortor. Aenean nec faucibus...</span><br/>
-			<hr class="short"/>
 			
-			<a class="btn btn-default btn-sm" href="../blog/lorem-ipsum.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>
+			<img class="pull-right blog-index-thumbnail" src="https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100" alt="thumbnail"/>
+			<span>Article summary comes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br/>
 			
-			<small class="pull-right">Tags: Lorem, Ipsum</small>
+			<div class="vspace"></div>
 			
+			<a class="btn btn-default btn-sm" href="../blog/lorem-ipsum.html"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>	
 			
+			<br class="clear"/>
 		</div>
 		
 		
 	
 	</div>
+
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script>
+(function ($) {
+	// custom css expression for a case-insensitive contains()
+	jQuery.expr[':'].Contains = function(a,i,m){
+		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+	};
+
+	function listFilter() {
+
+		$('#search')
+		.change( function () {
+			$('#search-results-text').show();
+			
+			var filter = $(this).val();
+			if(filter) {
+				// this finds all links in a list that contain the input,
+				// and hide the ones not containing the input while showing the ones that do
+				$('.list-of-posts').find("div:not(:Contains(" + filter + "))").hide();
+				$('.list-of-posts').find("div:Contains(" + filter + ")").show();
+				$('#search-query').text(filter);
+				} else {
+					$('#search-results-text').hide();
+					$('.list-of-posts').find("div").show();
+			}
+			return false;
+		})
+		.keyup( function () {
+			// fire the above change event after every letter
+			$(this).change();
+		});
+
+		$( ".tag" ).click(function() {
+			$('#search').val($(this).text());
+			$('#search').change();
+		});
+		
+		$( "#back" ).click(function() {
+			$('#search').val("");
+			$('#search').change();
+		});
+	}
+	
+	
+	//ondomready
+	$(function () {
+		listFilter($());
+	});
+}(jQuery));
+
+</script>
 	
 
 				
 			<div class="footer">
-				Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
+				<hr class="short"/>
+				<small class="pull-right">
+					Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
+				</small>
 			</div>
 		</div>
 	

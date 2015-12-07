@@ -9,6 +9,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <title>{% block title %}{% endblock %}</title>
+    {% block meta %}{% endblock %}
 
 	<link href="{{ subdir }}css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ subdir }}css/paperplane.css" rel="stylesheet">
@@ -31,9 +32,6 @@
 			<li><a href="{{ subdir }}index.html"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
 			<li><a href="{{ subdir }}blog/index.html"><span class="fa fa-pencil fa-fw"></span>&nbsp;&nbsp; Blog</a></li>
 		  </ul>
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank"><span class="fa fa-paper-plane fa-lg fa-fw"></span></a></li>
-		  </ul>
 	  </div>
 	</div>
   
@@ -42,7 +40,10 @@
 			{% block content %}{% endblock %}
 				
 			<div class="footer">
-				Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
+				<hr class="short"/>
+				<small class="pull-right">
+					Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
+				</small>
 			</div>
 		</div>
 	

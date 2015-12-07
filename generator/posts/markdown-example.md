@@ -1,9 +1,10 @@
-Markdown example
-2015-02-23
+Title: Markdown example
+Date: 2015-02-23
 Tags: Markdown
----
+Description: An example from the Markdown Wikipedia page
+Thumbnail: https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100
 
-An example from the  A [Markdown Wikipedia page](http://en.wikipedia.org/wiki/Markdown):
+An example from the [Markdown Wikipedia page](http://en.wikipedia.org/wiki/Markdown):
 
 Heading
 =======
