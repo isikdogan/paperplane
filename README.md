@@ -29,5 +29,5 @@ PaperPlane uses [Jinja2](http://jinja.pocoo.org/docs/dev/) template engine, [Boo
 #### Multi-platform
 PaperPlane is written in Python.
 
-### Free and open source
+#### Free and open source
 The PaperPlane project is released under the terms of the [MIT license](http://en.wikipedia.org/wiki/MIT_License). You can download/fork the code on [GitHub](https://github.com/isikdogan/paperplane).
