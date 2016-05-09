@@ -3,7 +3,7 @@
 PaperPlane is a very simple, flat-file, static blog generator.
 
 ### Demo
-[](http://www.isikdogan.com/files/paperplane-demo/)
+[http://www.isikdogan.com/files/paperplane-demo/](http://www.isikdogan.com/files/paperplane-demo/)
 
 > Run generator/blog.py to create a blog.
 
