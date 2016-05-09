@@ -2,11 +2,12 @@
 
 PaperPlane is a very simple, flat-file, static blog generator.
 
-Demo: [Demo](http://www.isikdogan.com/files/paperplane-demo/)
+### Demo
+[](http://www.isikdogan.com/files/paperplane-demo/)
 
 > Run generator/blog.py to create a blog.
 
-Here are the features:
+### Features:
 #### Fast
 The blog loads fast since all pages are pre-rendered. No server-side querying is required to display the pages.
 
