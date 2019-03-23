@@ -5,87 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="favicon.ico">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <title></title>
-    
-
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/paperplane.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>PaperPlane: A static blog generator
+</title>
 
 	
+
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/isikdogan.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+
   </head>
 
   <body>
-  
-    <div class="navbar navbar-inverse navbar-static-top">
-	  <div class="container">
-		  <ul class="nav navbar-nav">
-			<li><a href="index.html"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
-			<li><a href="blog/index.html"><span class="fa fa-pencil fa-fw"></span>&nbsp;&nbsp; Blog</a></li>
-		  </ul>
-	  </div>
-	</div>
-  
-    <div id="" class="container">
-		<div class="row" id="main">
+
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+          <li><a href="index.html"><span class="fa fa-home fa-fw"></span> Home</a></li>
+          <li><a href="blog/index.html"><span class="fa fa-pencil-square-o fa-fw"></span> Blog</a></li>
+          <li><a href="projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+      </ul>
+  </div>
+  </div>
+
+    <div class="container">
+		<div class="main row">
 			
-
-	<div class="panel panel-default">
-		<div class="panel-heading"><h1>PaperPlane: A simple static blog generator</h1></div>
-		<div class="panel-body blog-content">
-		
-		<hr/>
-		
-		<blockquote>
-<p><a class="btn btn-primary" target="_blank" href="https://github.com/isikdogan/paperplane"><span class="fa fa-github fa-lg"></span>&nbsp;&nbsp;&nbsp; Source Code</a></p>
-</blockquote>
-<p>You like this website? You can easily create your own using PaperPlane, which is a very simple, flat-file, static blog generator. Initially, I created it to have a complete control over my personal website. Then I decided to put it online after receiving some encouraging comments on my website.</p>
-<p>Here are the features:</p>
-<h2><i class="fa fa-rocket fa-fw"></i>&nbsp;&nbsp;Fast</h2>
-<p>The blog loads fast since all pages are pre-rendered. No server-side querying is required to display the pages.</p>
-<h2><i class="fa fa-database fa-fw"></i>&nbsp;&nbsp;Requires no database</h2>
-<p>The data is stored in a folder containing a text file for each blog entry.</p>
-<h2><i class="fa fa-cogs fa-fw"></i>&nbsp;&nbsp;Compatible</h2>
+<hr />
+<h2>PaperPlane: A static blog generator</h2>
+<hr />
+<p>PaperPlane is a very simple, flat-file, static blog generator. Originally, I made it to create <a href="http://www.isikdogan.com/">my personal homepage</a>. Feel free to use it to create yours.</p>
+<h4>PaperPlane is fast</h4>
+<p>The pages are all pre-rendered therefore load fast. No server-side querying is needed to display the pages.</p>
+<h4>Requires no database</h4>
+<p>The data is stored in a folder containing a flat text file for each blog entry.</p>
+<h4>Compatible</h4>
 <p>PaperPlane generated blogs can run on any HTML hosting service (Google Cloud Storage, GitHub, Dropbox, etc.).</p>
-<h2><i class="fa fa-lock fa-fw"></i>&nbsp;&nbsp;Secure</h2>
+<h4>Secure</h4>
 <p>No scripts run on the server side.</p>
-<h2><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;Easy to create content</h2>
-<p>PaperPlane support simple <a href="http://daringfireball.net/projects/markdown/">Markdown</a> formatting for content generation.</p>
-<h2><i class="fa fa-film fa-fw"></i>&nbsp;&nbsp;Easy to embed videos</h2>
+<h4>Easy to create content</h4>
+<p>PaperPlane support simple <a href="http://daringfireball.net/projects/markdown/">Markdown</a> formatting.</p>
+<h4>Easy to embed videos</h4>
 <p>You can easily embed videos using <code>[vid]link[/vid]</code> tags.</p>
-<h2><i class="fa fa-paint-brush fa-fw"></i>&nbsp;&nbsp;Easy to create themes</h2>
+<h4>Easy to create themes</h4>
 <p>PaperPlane uses <a href="http://jinja.pocoo.org/docs/dev/">Jinja2</a> template engine, <a href="http://getbootstrap.com/">Bootstrap 3.0</a> HTML/CSS framework, and <a href="http://fontawesome.io/">FontAwesome</a> icon collection.</p>
-<h2><i class="fa fa-server fa-fw"></i>&nbsp;&nbsp;Multi-platform</h2>
+<h4>Multi-platform</h4>
 <p>PaperPlane is written in Python.</p>
-<h2><i class="fa fa-github fa-fw"></i>&nbsp;&nbsp;Free and open source</h2>
+<h4>Free and open source</h4>
 <p>The PaperPlane project is released under the terms of the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>. You can download/fork the code on <a href="https://github.com/isikdogan/paperplane">GitHub</a>.</p>
-		
-		
-		<hr/>
-		</div>
-	</div>
-	
+<hr/>
 
-				
-			<div class="footer">
-				<hr class="short"/>
-				<small class="pull-right">
-					Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a>
-				</small>
-			</div>
 		</div>
-	
+
     </div><!-- /.container -->
-	
+
+	<link rel="icon" href="http://www.isikdogan.com/favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
   </body>
 </html>

@@ -1,8 +1,8 @@
-Title: An example blog post with a responsive video embed
-Date: 2015-02-22
-Tags: Video embed, YouTube
-Description: An example blog post with a responsive video embed
-Thumbnail: https://placeholdit.imgix.net/~text?txtsize=16&txt=100x100&w=100&h=100
+An example blog post with a responsive video embed
+2015-02-22
+Video embed, YouTube
+An example blog post with a responsive video embed
+https://i.ytimg.com/vi/VOi6LWzkCf4/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDLnmfHAa3XOz_1yXsR8Wc1cQSXCg
 
 An example blog post with a responsive video embed
 2015-02-22
@@ -11,5 +11,5 @@ Tags: Video embed, YouTube
 
 Here's a cool video:
 
-[vid]http://youtu.be/R0iJ86vXwCg[/vid]
+[vid]https://youtu.be/VOi6LWzkCf4[/vid]
 

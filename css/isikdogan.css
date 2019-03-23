@@ -1,0 +1,173 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.7em;
+	color:#304040;
+	margin-bottom: 50px;
+}
+
+a{
+	color: #206080;
+}
+
+h1{
+	color:#206080;
+	font-size: 26px;
+	line-height: 1.625;
+}
+
+h2{
+	font-size: 24px;
+	line-height: 1.625;
+}
+
+h4{
+	margin-top: 20px;
+	font-weight: 700;
+}
+
+hr.short{
+	margin: 10px 0;
+}
+
+.email:before {
+    content: attr(user) "\0040" attr(domain);
+}
+
+.vspace{
+	margin-bottom: 5px;
+}
+
+.navbar-inverse{
+	background-color: #206080;
+	border-color: #206080;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+}
+.navbar-nav > li > a:hover {
+	background-color: #307090 !important;
+}
+
+.business-card {
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+.business-card{
+	color: #206080;
+}
+.business-card img{
+	box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+	border: 3px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer{
+	padding-bottom: 30px;
+	clear:both;
+}
+
+.bold{
+	font-weight: 700;
+}
+
+.big{
+	font-size: 150%;
+}
+
+.itembox{
+	padding: 10px 15px;
+	margin-bottom: 15px;
+}
+
+.project-thumb{
+	float:right;
+	border: 1px solid #ddd;
+	max-width: 125px;
+	border-radius: 6px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.blog-content img{
+	margin: 20px;
+	max-width: 95%;
+	border-radius: 6px;
+}
+
+.blog-index-thumbnail{
+	max-width: 200px;
+	max-height: 150px;
+	display: block;
+	margin-left: 20px;
+	border-radius: 6px;
+}
+
+.blog-content .embed-responsive{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.blog-content h3{
+	margin-bottom: 0;
+}
+
+.blog-content p{
+	margin: 0 0 20px;
+}
+
+.btn-primary{
+	background-color: #206080;
+	border-color: #206080
+}
+
+.date{
+	color:#aaa;
+}
+
+.breadcrumb {
+	background-color: #fff;
+}
+
+.clear{
+	clear: both;
+}
+
+.my-picture{
+	float: left;
+}
+.my-business-card{
+	margin-left: 210px;
+	margin-top: 30px;
+}
+br.rbr{
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.container { max-width: 1024px; }
+}
+
+@media (max-width: 768px) {
+  .pull-right{
+	float: none !important;
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+  }
+
+  br.rbr{
+	display: block;
+  }
+
+  .my-picture{
+	float: none;
+  }
+  .my-business-card{
+	margin-left: auto;
+	margin-top: 15px;
+  }
+
+  .high,.mid,.low{
+	width: 100%;
+  }
+}

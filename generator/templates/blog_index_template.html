@@ -4,45 +4,35 @@
 {% block pageid %}blogindex{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Index of blog posts" />
+<meta name="description" content="Blog" />
 {% endblock %}
 
 {% block content %}
-		
+
 	<form>
 		<input type="text" class="form-control" id="search" placeholder="Search...">
 	</form>
 
 	<div id="search-results-text" style="display:none">
 	<hr/>
-		<button id="back" class="btn btn-default btn-sm pull-right"><i class="fa fa-arrow-left fa-fw"></i> Go back</button> 
+		<button id="back" class="btn btn-default btn-sm pull-right"><i class="fa fa-arrow-left fa-fw"></i> Go back</button>
 		<i class="fa fa-search fa-fw"></i> Search resutls for <code id="search-query"></code>:
 	</div>
-			
+
 	<hr/>
 
 	<div class="list-of-posts">
-	
 		{% for post in posts %}
-		
 		<div class="itembox">
-		
-			<a href="{{ post["filename"] }}" class="index-title">{{ post["title"] }}</a>
-			<span class="date pull-right">{{ post["formatted_date"] }}</span>
+			<h3><a href="{{ post["filename"] }}">{{ post["title"] }}</a></h3>
+			<span class="date">{{ post["formatted_date"] }}</span>
 			<hr class="short clear"/>
-			
 			<img class="pull-right blog-index-thumbnail" src="{{ post["thumbnail"] }}" alt="thumbnail"/>
-			<span>{{ post["description"] }}</span><br/>
-			
+			<p>{{ post["description"] }}</p>
 			<div class="vspace"></div>
-			
-			<a class="btn btn-default btn-sm" href="{{ post["filename"] }}"><span class="fa fa-angle-double-right fa-lg"></span>&nbsp;&nbsp;&nbsp; Read on</a>	
-			
-			<br class="clear"/>
+			<a class="btn btn-default btn-sm" href="{{ post["filename"] }}">Read on</a>
 		</div>
-		
 		{% endfor %}
-	
 	</div>
 
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
@@ -58,7 +48,7 @@
 		$('#search')
 		.change( function () {
 			$('#search-results-text').show();
-			
+
 			var filter = $(this).val();
 			if(filter) {
 				// this finds all links in a list that contain the input,
@@ -81,14 +71,13 @@
 			$('#search').val($(this).text());
 			$('#search').change();
 		});
-		
+
 		$( "#back" ).click(function() {
 			$('#search').val("");
 			$('#search').change();
 		});
 	}
-	
-	
+
 	//ondomready
 	$(function () {
 		listFilter($());
@@ -96,5 +85,5 @@
 }(jQuery));
 
 </script>
-	
+
 {% endblock %}

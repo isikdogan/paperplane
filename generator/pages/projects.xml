@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<projects>
+
+	<project>
+		<title>My super cool project</title>
+		<description>This application does cool stuff.</description>
+		<type>Research Project, presented at the International Conference on Artificial Intelligence Gossip</type>
+		<date>August 2017</date>
+		<notes><![CDATA[
+			<span class="label label-info">Computer Vision, Deep Learning</span>
+			<a href="#" class="btn btn-default btn-xs" target="_blank">Paper</a>
+		]]></notes>
+		<picture>https://placeholdit.imgix.net/~text?txtsize=16&amp;txt=100x100&amp;w=100&amp;h=100</picture>
+	</project>
+
+	<project>
+		<title>My other super cool project</title>
+		<description>This application also does cool stuff.</description>
+		<type>Class Project</type>
+		<date>June 2017</date>
+		<notes><![CDATA[
+			<span class="label label-info">Python, C++</span>
+			<a href="#" class="btn btn-default btn-xs" target="_blank">Demo</a>
+		]]></notes>
+		<picture>https://placeholdit.imgix.net/~text?txtsize=16&amp;txt=100x100&amp;w=100&amp;h=100</picture>
+	</project>
+
+</projects>

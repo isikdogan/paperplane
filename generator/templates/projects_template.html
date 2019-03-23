@@ -1,0 +1,21 @@
+{% extends "main_template.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+
+  <h1>Projects</h1>
+	{% for project in projects %}
+	<div class="itembox">
+		<img src="{{ project.find('picture').text }}" class="project-thumb"/>
+		<h3>{{ project.find('title').text }}</h3>
+		<p>
+		{{ project.find('date').text }}<br/>
+		{% if project.find('description').text != None %}
+			{{ project.find('description').text }}<br/>
+		{% endif %}
+		{{ project.find('type').text }}<br/>
+		{{ project.find('notes').text }}</p>
+		<div style="clear:both"></div>
+	</div>
+	{% endfor %}
+{% endblock %}

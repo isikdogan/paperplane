@@ -1,7 +1,10 @@
-PaperPlane is a very simple, flat-file, static blog generator. Originally, I made it to create [my personal homepage](http://www.isikdogan.com/). Feel free to use it to create yours.
+PaperPlane: A static blog generator
 
-[Live demo (my personal homepage)](http://www.isikdogan.com/)
-> Run generator/blog.py to create a static website.
+---
+## PaperPlane: A static blog generator
+---
+
+PaperPlane is a very simple, flat-file, static blog generator. Originally, I made it to create [my personal homepage](http://www.isikdogan.com/). Feel free to use it to create yours.
 
 #### PaperPlane is fast
 The pages are all pre-rendered therefore load fast. No server-side querying is needed to display the pages.
@@ -28,4 +31,4 @@ PaperPlane uses [Jinja2](http://jinja.pocoo.org/docs/dev/) template engine, [Boo
 PaperPlane is written in Python.
 
 #### Free and open source
-The PaperPlane project is released under the terms of the [MIT license](http://en.wikipedia.org/wiki/MIT_License). You can download or fork the code on [GitHub](https://github.com/isikdogan/paperplane).
+The PaperPlane project is released under the terms of the [MIT license](http://en.wikipedia.org/wiki/MIT_License). You can download/fork the code on [GitHub](https://github.com/isikdogan/paperplane).

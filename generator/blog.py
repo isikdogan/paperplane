@@ -1,28 +1,28 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb 21 03:13:22 2015
+from paperplane import Blog, Homepage, TemplateRenderer
+import xml.etree.ElementTree as ET
 
-@author: Leo Furkan Isikdogan
-"""
+# Posts will be read from here
+markdown_dir = "posts/*.md"
 
-from paperplane import createBlog
-import os
-
-#Posts will be read from here
-text_dir = "posts/*.md"
-frontpage_text_dir = "index.md"
-
-#Generated pages will be written here
+# Generated pages will be written here
 blog_dir = "../blog/"
-frontpage_dir = "../"
 
-#Templates
+# Templates
 index_template = 'blog_index_template.html'
 blog_template = 'blog_post_template.html'
-frontpage_template = 'frontpage_template.html'
 
-#Create the blog
-createBlog(text_dir, blog_dir, blog_template, createIndexPage = True, index_template = index_template, subdir = "../")
-                                         
-#Create the frontpage
-createBlog(frontpage_text_dir, frontpage_dir, frontpage_template, createSlugs = False)
+# Create the blog
+blog = Blog(markdown_dir)
+blog.create_html_pages(blog_dir, blog_template, index_template)
+
+# Create the homepage
+hp = Homepage('pages/homepage.md')
+hp.create_html_page()
+
+# Create the projects page
+tree = ET.parse('pages/projects.xml')
+root = tree.getroot()
+projects=root.findall('project')
+TemplateRenderer.create_html('../projects.html',
+                             'projects_template.html',
+                              projects=projects, subdir='')

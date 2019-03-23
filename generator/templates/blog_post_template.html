@@ -1,0 +1,26 @@
+{% extends "main_template.html" %}
+{% block title %}{{ post["title"] }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ post["description"] }}" />
+{% endblock %}
+
+{% block content %}
+
+	<div class="blog-content">
+
+		<h1>{{ post["title"] }}</h1>
+		<span class="date">{{ post["formatted_date"] }}</span>
+
+		<hr/>
+
+		{{ post["content"] }}
+
+		{% if post["tags"] != "" %}
+		  <hr/>
+		  {{ post["tags"] }}
+		{% endif %}
+		<hr/>
+	</div>
+
+{% endblock %}

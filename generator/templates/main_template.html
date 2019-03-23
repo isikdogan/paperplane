@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+
+	{% block meta %}{% endblock %}
+
+	<link href="{{ subdir }}css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ subdir }}css/isikdogan.css" rel="stylesheet">
+	<link href="{{ subdir }}css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+          <li><a href="{{ subdir }}index.html"><span class="fa fa-home fa-fw"></span> Home</a></li>
+          <li><a href="{{ subdir }}blog/index.html"><span class="fa fa-pencil-square-o fa-fw"></span> Blog</a></li>
+          <li><a href="{{ subdir }}projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+      </ul>
+  </div>
+  </div>
+
+    <div class="container">
+		<div class="main row">
+			{% block content %}{% endblock %}
+		</div>
+
+    </div><!-- /.container -->
+
+	<link rel="icon" href="http://www.isikdogan.com/favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+  </body>
+</html>
